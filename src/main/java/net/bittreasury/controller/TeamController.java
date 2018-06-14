@@ -1,26 +1,18 @@
 package net.bittreasury.controller;
 
+import java.util.HashSet;
 import java.util.List;
-
-import javax.transaction.Transactional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
+import net.bittreasury.entity.Match;
 import net.bittreasury.entity.Team;
-import net.bittreasury.entity.User;
-import net.bittreasury.repository.TeamRepository;
-import net.bittreasury.repository.UserRepository;
 import net.bittreasury.service.TeamService;
-import net.bittreasury.service.impl.TeamServiceImpl;
 
 @Controller
 public class TeamController {
@@ -40,7 +32,12 @@ public class TeamController {
 	@GetMapping("/getTeamById")
 	public String geTeamById(@RequestParam(name="id",defaultValue="1") Integer id,ModelMap map) {
 		Team team = teamService.geTeamById(id);
+		Set<Match> matchs = new HashSet<>();
+		matchs.addAll(team.getMatchsTeamA());
+		matchs.addAll(team.getMatchsTeamB());
+		matchs.addAll(team.getMatchsWinner());
 		map.addAttribute("team",team);
+		map.addAttribute("matchs", matchs);
 		return "team/teamDetails";
 	}
 }

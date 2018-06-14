@@ -8,10 +8,21 @@
 <title>球队详细页面</title>
 </head>
 <body>
-	序列${team.teamId }</br>
-	队名${team.teamName }</br>
-	<c:forEach  var="entity" items="${team.matchsTeamA }">
-		<c:out value="${entity }"></c:out>
+	<!-- 序列${team.teamId }</br> -->
+	队名: ${team.teamName }</br>
+	<c:forEach  var="entity" items="${matchs }">
+		<c:out value="${entity.team_a.teamName }"></c:out>
+		对阵
+		<c:out value="${entity.team_b.teamName }"></c:out>
+		</br>
+		赢家
+		<c:out value="${entity.winner.teamName }"></c:out>
+		比分
+		<c:out value="${entity.scores }"></c:out>
+		日期
+		<c:out value="${entity.m_date }"></c:out>
+		比赛地址
+		<c:out value="${entity.address }"></c:out>
 	</c:forEach>
 </body>
 </html>

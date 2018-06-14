@@ -10,7 +10,7 @@ import net.bittreasury.entity.Team;
 import net.bittreasury.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
-	
-//	@Query("select u from User u")
-//	public List<User> getByTeam();
+
+	@Query(value = "select * from oo_user where uname=?1 and upassword=?2", nativeQuery = true)
+	User getByLogin(String name, String password);
 }

@@ -11,4 +11,7 @@ public interface UserService {
 	
 	List<User> getUsersByTeamId(Integer teamId);
 	
+	User getUserByLogin(String name,String password);
+	
+	User getUserByLogin2(String name,String password);
 }
