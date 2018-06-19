@@ -32,4 +32,10 @@ public class TeamServiceImpl implements TeamService {
 		Optional<Team> team = teamRepository.findById(id);
 		return team.orElse(new Team());
 	}
+
+	@Override
+	public List queryTeamLsit() {
+		List<Team> list = teamRepository.findAll();
+		return list;
+	}
 }

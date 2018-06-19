@@ -33,10 +33,9 @@ public class Match implements java.io.Serializable {
 	@Column
 	private String scores;
 	@Column
-	private Date m_date;
+	private String m_date;
 	@Column
 	private String address;
-
 	/**
 	 * @return the mId
 	 */
@@ -115,16 +114,16 @@ public class Match implements java.io.Serializable {
 	/**
 	 * @return the m_date
 	 */
-	public Date getM_date() {
+	public String getM_date() {
 		return m_date;
 	}
 
 	/**
-	 * @param m_date
+	 * @param time
 	 *            the m_date to set
 	 */
-	public void setM_date(Date m_date) {
-		this.m_date = m_date;
+	public void setM_date(String time) {
+		this.m_date = time;
 	}
 
 	/**

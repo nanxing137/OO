@@ -34,8 +34,10 @@ public class HomeController {
 			session.setAttribute(WebSecurityConfig.SESSION_KEY, username);
 			if("3".equals(user.getIsfootballer())){
 				return "home/manager";
+			
+			}else{
+				return "home/home";
 			}
-			return "home/home";
 		}
 		else {
 			return "user/login";
@@ -47,5 +49,5 @@ public class HomeController {
 		session.removeAttribute(WebSecurityConfig.SESSION_KEY);
 		return "home/home";
 	}
-	
+
 }
