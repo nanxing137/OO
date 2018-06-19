@@ -20,7 +20,7 @@ public class TeamController {
 	private TeamService teamService;
 	
 	
-	@GetMapping(name="/searchTeam")
+	@GetMapping("/searchTeam")
 	public String searchTeam(@RequestParam(name="teamName",defaultValue="") String teamName,ModelMap map) {
 		List<Team> teams = teamService.findTeamList(teamName);
 		map.addAttribute("teams",teams);

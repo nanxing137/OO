@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>HOME</title>
 </head>
+
+<jsp:include page="../include/head.jsp"></jsp:include>
 <body>
 
 </body>

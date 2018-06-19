@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<div>
+	用户名: ${user }
+</div>
 </body>
 </html>

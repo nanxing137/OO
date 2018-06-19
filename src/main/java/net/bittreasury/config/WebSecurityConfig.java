@@ -7,13 +7,16 @@ import javax.servlet.http.HttpSession;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 @Configuration
+//@EnableWebMvc
 public class WebSecurityConfig extends WebMvcConfigurerAdapter {
 
 	/**
@@ -33,12 +36,14 @@ public class WebSecurityConfig extends WebMvcConfigurerAdapter {
 		// 排除配置
 		addInterceptor.excludePathPatterns("/error");
 		addInterceptor.excludePathPatterns("/login");
-//		addInterceptor.excludePathPatterns("/");
+		// addInterceptor.excludePathPatterns("/");
 		addInterceptor.excludePathPatterns("/layout");
 
 		// 拦截配置
 		addInterceptor.addPathPatterns("/**");
 	}
+
+	
 
 	private class SecurityInterceptor extends HandlerInterceptorAdapter {
 
