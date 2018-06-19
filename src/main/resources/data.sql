@@ -13,3 +13,7 @@ insert into oo_user(team_team_id,uname,upassword,isfootballer)
 values(1,'SAMA','password','是了OK?');
 insert into oo_user(team_team_id,uname,upassword,isfootballer)
 values(2,'THORNHILL','password','是了OK?');
+insert into oo_user(team_team_id,uname,upassword,isfootballer)
+values(3,'1','1','3');
+insert into oo_user(team_team_id,uname,upassword,isfootballer)
+values(4,'2','2','是了OK');

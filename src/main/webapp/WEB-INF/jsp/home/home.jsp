@@ -9,6 +9,6 @@
 
 <jsp:include page="../include/head.jsp"></jsp:include>
 <body>
-
+this is home page ！
 </body>
 </html>

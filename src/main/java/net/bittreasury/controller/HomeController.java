@@ -32,6 +32,9 @@ public class HomeController {
 		
 		if (user!=null&&(null!=user.getUname())) {
 			session.setAttribute(WebSecurityConfig.SESSION_KEY, username);
+			if("3".equals(user.getIsfootballer())){
+				return "home/manager";
+			}
 			return "home/home";
 		}
 		else {
