@@ -8,4 +8,5 @@ public interface TeamService {
 	List<Team> findTeamList(String teamName);
 	Team geTeamById(Integer id);
 	List queryTeamLsit();
+	Team addTeam(String teamName);
 }

@@ -22,7 +22,7 @@ public class Match implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer mId;
-
+	
 	@ManyToOne(cascade = { CascadeType.REFRESH, CascadeType.MERGE }, optional = true)
 	private Team team_a;
 	@ManyToOne(cascade = { CascadeType.REFRESH, CascadeType.MERGE }, optional = true)
@@ -30,6 +30,16 @@ public class Match implements java.io.Serializable {
 
 	@ManyToOne(cascade = { CascadeType.REFRESH, CascadeType.MERGE }, optional = true)
 	private Team winner;
+	@Column
+	private String name;
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	@Column
 	private String scores;
 	@Column

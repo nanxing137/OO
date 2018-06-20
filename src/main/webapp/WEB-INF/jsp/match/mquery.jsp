@@ -7,10 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>matchquery</title>
 </head>
+<jsp:include page="../include/head.jsp"></jsp:include>
 <body>
 
 	<c:forEach items="${matchList }" var="macth">
 		<p>比赛ID ：${macth.mId }</p>
+		<p>比赛名称：${macth.name }</p>
 		<p>比赛双方 ：${macth.team_a.teamName }   VS   ${macth.team_b.teamName }</p>
 		<p>比赛胜者 ：${macth.winner.teamName }</p>
 		<p>比赛比分 ：${macth.scores }</p>

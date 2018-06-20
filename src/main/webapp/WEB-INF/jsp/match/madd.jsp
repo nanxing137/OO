@@ -11,6 +11,7 @@
 <title>matchadd</title>
 </head>
 <body>
+<jsp:include page="../include/head.jsp"></jsp:include>
 <form action="/manager/madd1" method="get">
 	<select id="one" name="one1">
 		<c:forEach items="${teams }" var="team">
@@ -25,6 +26,7 @@
 	<select id="three" name="three3">
 		
 	</select>
+	比赛名：<input name="mname"></input>
 	比分：<input name="score"></input>
 	时间：<input name="time"></input>格式为 YYYY-MM-DD
 	地点：<input name="address"></input> 
