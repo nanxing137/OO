@@ -63,7 +63,7 @@ public class TeamServiceImpl implements TeamService {
 	}
 	
 	@Override
-	public List getAllTeam() {
+	public List<Team> getAllTeam() {
 		List<Team> list = teamRepository.findAll();
 		return list;
 	}

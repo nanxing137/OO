@@ -59,5 +59,10 @@ public class MatchServiceImpl implements MatchService {
 		matchRepository.deleteById(mId);
 		return true;
 	}
+	@Override
+	public List<Match> findteam(Integer team) {
+		
+		return matchRepository.getByteam2(team);
+	}
 
 }

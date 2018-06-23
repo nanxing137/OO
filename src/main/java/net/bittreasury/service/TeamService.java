@@ -11,5 +11,5 @@ public interface TeamService {
 	Team getTeamByName(String teamName);
 	void delete(Team team);
 	Team addTeam(String teamName);
-	List getAllTeam();
+	List<Team> getAllTeam();
 }

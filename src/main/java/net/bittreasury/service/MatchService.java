@@ -15,6 +15,8 @@ public interface MatchService {
 	boolean macthmodify(int mId, String mName, Team geTeamById, String score, String time, String address);
 
 	boolean deleteMacth(int mId);
+	
+	List<Match> findteam(Integer team);
 
 
 }

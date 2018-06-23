@@ -17,6 +17,7 @@ import net.bittreasury.config.WebSecurityConfig;
 import net.bittreasury.entity.Match;
 import net.bittreasury.entity.Team;
 import net.bittreasury.entity.User;
+import net.bittreasury.service.MatchService;
 import net.bittreasury.service.TeamService;
 import net.bittreasury.service.UserService;
 
@@ -26,6 +27,8 @@ public class TeamController {
 	private TeamService teamService;
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private MatchService matchService;
 	
 	@GetMapping("/searchTeam")
 	public String searchTeam(@RequestParam(name="teamName",defaultValue="") String teamName,ModelMap map) {
@@ -51,7 +54,11 @@ public class TeamController {
 	public String deleteTeam(ModelMap map,HttpSession session) {
 		Integer uid=(Integer) session.getAttribute(WebSecurityConfig.SESSION_USER_ID);
 		User user1=userService.getUserById(uid);
-		
+		List<Team> teams=teamService.getAllTeam();
+		System.out.println("**************");
+		System.out.println(teams);
+		System.out.println("**************");
+		map.addAttribute("teams",teams);
 		if(user1.getIsfootballer().equals("3"))
 			return "team/dropteam";
 		else 
@@ -62,12 +69,31 @@ public class TeamController {
 		System.out.println(teamName);
 		Team team=teamService.getTeamByName(teamName);
 		System.out.println(team);
-		teamService.delete(team);
-		Integer uid=(Integer) session.getAttribute(WebSecurityConfig.SESSION_USER_ID);
-		System.out.println(uid);
-		User user1=userService.getUserById(uid);
-		map.addAttribute("user",user1);
-		System.out.println(user1);
-	return "user/altersuccess";
+		
+		//判断有无比赛
+		List<Match> matchs=matchService.findteam(team.getTeamId());
+		if(null == matchs || matchs.size() ==0 ){
+
+			//为空的情况
+
+			teamService.delete(team);
+			Integer uid=(Integer) session.getAttribute(WebSecurityConfig.SESSION_USER_ID);
+			System.out.println(uid);
+			User user1=userService.getUserById(uid);
+			map.addAttribute("user",user1);
+			System.out.println(user1);
+			return "user/altersuccess";
+			
+			}else{
+
+			//不为空的情况
+
+				Integer uid=(Integer) session.getAttribute(WebSecurityConfig.SESSION_USER_ID);
+				System.out.println(uid);
+				User user1=userService.getUserById(uid);
+				map.addAttribute("user",user1);
+				System.out.println(user1);
+				return "user/alterfalse";
+			}
 	}
 }

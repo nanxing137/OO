@@ -8,6 +8,10 @@
 </head>
 <body>
 操作失败
-<a href="/">返回主页</a>
+<form action="/login">
+<input type="hidden" name="userName" value="${user.uname}">
+<input type="hidden" name="password" value="${user.upassword}">
+<input type="submit" value="返回主页">
+</form>
 </body>
 </html>
