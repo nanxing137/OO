@@ -24,6 +24,7 @@ public class Match implements java.io.Serializable {
 	private Integer mId;
 
 	@ManyToOne(cascade = { CascadeType.ALL, CascadeType.MERGE }, optional = true)
+
 	private Team team_a;
 	@ManyToOne(cascade = { CascadeType.ALL, CascadeType.MERGE }, optional = true)
 	private Team team_b;

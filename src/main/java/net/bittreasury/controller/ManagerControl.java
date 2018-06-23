@@ -1,3 +1,4 @@
+
 package net.bittreasury.controller;
 
 import java.util.List;
@@ -95,3 +96,4 @@ public class ManagerControl {
 	}
 
 }
+
