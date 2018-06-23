@@ -23,12 +23,12 @@ public class Match implements java.io.Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer mId;
 
-	@ManyToOne(cascade = { CascadeType.REFRESH, CascadeType.MERGE }, optional = true)
+	@ManyToOne(cascade = { CascadeType.ALL, CascadeType.MERGE }, optional = true)
 	private Team team_a;
-	@ManyToOne(cascade = { CascadeType.REFRESH, CascadeType.MERGE }, optional = true)
+	@ManyToOne(cascade = { CascadeType.ALL, CascadeType.MERGE }, optional = true)
 	private Team team_b;
 
-	@ManyToOne(cascade = { CascadeType.REFRESH, CascadeType.MERGE }, optional = true)
+	@ManyToOne(cascade = { CascadeType.ALL, CascadeType.MERGE }, optional = true)
 	private Team winner;
 	@Column
 	private String scores;
@@ -36,6 +36,8 @@ public class Match implements java.io.Serializable {
 	private String m_date;
 	@Column
 	private String address;
+	@Column
+	private String name;
 	/**
 	 * @return the mId
 	 */
@@ -140,5 +142,14 @@ public class Match implements java.io.Serializable {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 
 }
