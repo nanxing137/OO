@@ -15,7 +15,7 @@
 </body>
 </html>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -47,7 +47,7 @@
 		</div>
 	</div>
 	</body>
-</html>
+</html> -->
 <!--  <div id="divLogin">
 		<fieldset>
 			<h3>用户登录</h3>

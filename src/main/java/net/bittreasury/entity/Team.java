@@ -21,17 +21,17 @@ public class Team implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer teamId;
-	@Column
+	@Column(unique=true)
 	private String teamName;
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "team_a")
+	@OneToMany( fetch = FetchType.LAZY, mappedBy = "team_a")
 	private Set<Match> matchsTeamA = new HashSet<>();
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "team_b")
+	@OneToMany( fetch = FetchType.LAZY, mappedBy = "team_b")
 	private Set<Match> matchsTeamB = new HashSet<>();
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "winner")
+	@OneToMany( fetch = FetchType.LAZY, mappedBy = "winner")
 	private Set<Match> matchsWinner = new HashSet<>();
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "team")
+	@OneToMany( fetch = FetchType.LAZY, mappedBy = "team")
 	private Set<User> users = new HashSet<>();
 
 	

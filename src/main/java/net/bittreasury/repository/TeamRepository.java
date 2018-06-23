@@ -6,4 +6,5 @@ import net.bittreasury.entity.Team;
 
 public interface TeamRepository extends JpaRepository<Team, Integer> {
 
+	Team getByTeamName(String teamName);
 }

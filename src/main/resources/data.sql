@@ -17,3 +17,11 @@ insert into oo_user(team_team_id,uname,upassword,isfootballer)
 values(3,'1','1','3');
 insert into oo_user(team_team_id,uname,upassword,isfootballer)
 values(4,'2','2','是了OK');
+insert into oo_match(team_a_team_id,team_b_team_id,winner_team_id,scores,m_date,address,name)
+values(1,2,1,'3:0','2007-03-03','内大','篮球测试赛');
+insert into oo_user(team_team_id,uname,upassword,isfootballer)
+values(5,'3','3','3');
+insert into oo_user(team_team_id,uname,upassword,isfootballer)
+values(6,'4','4','3');
+insert into oo_user(team_team_id,uname,upassword,isfootballer)
+values(5,'5','5','3');

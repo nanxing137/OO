@@ -22,8 +22,8 @@ public class WebSecurityConfig extends WebMvcConfigurerAdapter {
 	/**
 	 * 登录session key
 	 */
-	public final static String SESSION_KEY = "user";
-
+	public final static String SESSION_KEY = "userName";
+	public final static String SESSION_USER_ID = "userId";
 	@Bean
 	public SecurityInterceptor getSecurityInterceptor() {
 		return new SecurityInterceptor();
@@ -38,7 +38,7 @@ public class WebSecurityConfig extends WebMvcConfigurerAdapter {
 		addInterceptor.excludePathPatterns("/login");
 		// addInterceptor.excludePathPatterns("/");
 		addInterceptor.excludePathPatterns("/layout");
-
+		addInterceptor.excludePathPatterns("/register");
 		// 拦截配置
 		addInterceptor.addPathPatterns("/**");
 	}

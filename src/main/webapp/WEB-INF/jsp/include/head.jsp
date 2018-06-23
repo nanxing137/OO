@@ -8,7 +8,7 @@
 </head>
 <body>
 <div>
-	用户名: ${user }
+	用户名: <a href="/alterUser?user=${userId}">${userName}</a>
 </div>
 </body>
 </html>
