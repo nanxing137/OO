@@ -13,6 +13,9 @@
 <a href="manager/teamAdd">增加球队</a>
 </div>
 <div>球员管理</div>
+<a href="/userregister">用户注册</a>
+<a href="/seeplayer">查询球员</a>
+<a href="/register">球员认证</a>
 <div>比赛管理
 <a href="/manager/madd">增加比赛</a>
 <a href="/manager/mdelete">删除比赛</a>

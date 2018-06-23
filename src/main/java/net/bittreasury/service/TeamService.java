@@ -9,4 +9,5 @@ public interface TeamService {
 	Team geTeamById(Integer id);
 	List queryTeamLsit();
 	Team addTeam(String teamName);
+	List getAllTeam();
 }

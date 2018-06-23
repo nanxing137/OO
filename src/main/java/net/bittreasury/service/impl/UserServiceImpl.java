@@ -45,4 +45,10 @@ public class UserServiceImpl implements UserService {
 		return userRepository.getByLogin(name, password);
 	}
 
+	@Override
+	public User addUser(User user) {
+		User save = userRepository.save(user);
+		return save;
+	}
+
 }

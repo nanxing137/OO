@@ -47,4 +47,10 @@ public class TeamServiceImpl implements TeamService {
 		team = teamRepository.save(team);
 		return team;
 	}
+
+	@Override
+	public List getAllTeam() {
+		List<Team> list = teamRepository.findAll();
+		return list;
+	}
 }

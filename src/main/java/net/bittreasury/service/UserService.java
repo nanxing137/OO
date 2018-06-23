@@ -14,4 +14,6 @@ public interface UserService {
 	User getUserByLogin(String name,String password);
 	
 	User getUserByLogin2(String name,String password);
+	
+	User addUser(User user);
 }
