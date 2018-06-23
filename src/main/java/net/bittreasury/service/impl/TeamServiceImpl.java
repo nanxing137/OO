@@ -38,4 +38,33 @@ public class TeamServiceImpl implements TeamService {
 		List<Team> list = teamRepository.findAll();
 		return list;
 	}
+
+	@Override
+	public Team addTeam(String teamName) {
+		// TODO Auto-generated method stub
+		Team team = new Team();
+		team.setTeamName(teamName);
+		team = teamRepository.save(team);
+		return team;
+	}
+	
+	@Override
+	public Team getTeamByName(String teamName) {
+
+		Team byTeamName = teamRepository.getByTeamName(teamName);
+		System.out.println("********************************");
+		System.out.println(byTeamName);
+		return byTeamName;
+	}
+
+	@Override
+	public void delete(Team team) {
+		teamRepository.delete(team);
+	}
+	
+	@Override
+	public List getAllTeam() {
+		List<Team> list = teamRepository.findAll();
+		return list;
+	}
 }
