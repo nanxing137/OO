@@ -45,4 +45,40 @@ public class UserServiceImpl implements UserService {
 		return userRepository.getByLogin(name, password);
 	}
 
+	@Override
+	public User getUserById(Integer userid) {
+		
+		return userRepository.getOne(userid);
+	}
+
+	@Override
+	public boolean save(User user) {
+		// TODO Auto-generated method stub
+		
+		return false;
+	}
+
+	@Override
+	public void update(User user) {
+		// TODO Auto-generated method stub
+		userRepository.save(user);
+	}
+
+	@Override
+	public void delete(User user) {
+		userRepository.deleteById(user.getUid());
+	}
+
+	@Override
+	public User getUserByName(String username) {
+		// TODO Auto-generated method stub
+		
+		return userRepository.getByUname(username);
+	}
+	@Override
+	public User addUser(User user) {
+		User save = userRepository.save(user);
+		return save;
+	}
+
 }
