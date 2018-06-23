@@ -7,8 +7,15 @@
 <title>manager</title>
 </head>
 <body>
-<div><a href="#"></a>球队管理</div>
-<div><a href="#"></a>球员管理</div>
+<div>球队管理
+<a href="manager/teamAdd">增加球队</a>
+</div>
+<div>球员管理</div>
+<a href="/userregister">用户注册</a>
+<a href="/seeplayer">查询球员</a>
+<a href="/register">球员认证</a>
+<div><a href="/deleteUser">删除用户</a></div>
+<div><a href="/deleteTeam">删除球队</a></div>
 <div>比赛管理
 <a href="/manager/madd">增加比赛</a>
 <a href="/mdelete.jsp">删除比赛</a>
