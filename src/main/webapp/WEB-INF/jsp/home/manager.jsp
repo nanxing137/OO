@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<jsp:include page="../include/head.jsp"></jsp:include>
 <title>manager</title>
 </head>
 <body>

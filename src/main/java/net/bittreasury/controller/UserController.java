@@ -28,12 +28,13 @@ public class UserController {
 	return "user/alterUser";
 	}
 	@RequestMapping("/updataUser")
-	public String updataUser(@RequestParam(name="userName",defaultValue="") String userName,ModelMap map,HttpSession session) {
+	public String updataUser(@RequestParam(name="userpassword",defaultValue="") String userpassword,@RequestParam(name="username",defaultValue="") String username,ModelMap map,HttpSession session) {
 		Integer uid=(Integer) session.getAttribute(WebSecurityConfig.SESSION_USER_ID);
 		System.out.println(uid);
 		User user1=userService.getUserById(uid);
 		System.out.println(user1);
-		user1.setUname(userName);
+		user1.setUname(username);
+		user1.setUpassword(userpassword);
 		userService.update(user1);
 		map.addAttribute("user",user1);
 	return "user/altersuccess";
